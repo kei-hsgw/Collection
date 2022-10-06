@@ -1,9 +1,9 @@
 package practice;
 
 import java.time.LocalDate;
-import java.util.Comparator;
+//import java.util.Comparator;
 
-public class Task implements Comparator<Task> {
+public class Task implements Comparable<Task> {
 
 	/** 日付 */
 	private LocalDate date;
@@ -39,14 +39,20 @@ public class Task implements Comparator<Task> {
 		return "Task [date=" + date + ", task=" + task + "]";
 	}
 
+	// Comparatorを実装した場合
+//	@Override
+//	public int compare(Task o1, Task o2) {
+//		if (o1.date.isBefore(o2.date)) {
+//			return -1;
+//		} else if (o1.date.isAfter(o2.date)) {
+//			return 1;
+//		}
+//		return 0;
+//	}
+
 	@Override
-	public int compare(Task o1, Task o2) {
-		if (o1.date.isBefore(o2.date)) {
-			return -1;
-		} else if (o1.date.isAfter(o2.date)) {
-			return 1;
-		}
-		return 0;
+	public int compareTo(Task o) {
+		return date.compareTo(o.date);
 	}
 
 }

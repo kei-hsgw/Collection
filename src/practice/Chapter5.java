@@ -22,7 +22,7 @@ public class Chapter5 {
 		taskList.add(new Task(d4, "散髪に行く。"));
 		taskList.add(new Task(d5, "スクールの課題を解く。"));
 
-		Collections.sort(taskList, new Task());
+		Collections.sort(taskList);
 		for (Task task : taskList) {
 			System.out.println(task.getDate() + ":" + task.getTask());
 		}
